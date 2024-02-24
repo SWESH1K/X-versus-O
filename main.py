@@ -1,3 +1,5 @@
+# Main Game
+
 from game import *
 
 def main():
@@ -14,7 +16,7 @@ def main():
 
         # Checking for the bot move:
         if not(isWinner(board, 'X')):
-            move = compMove()
+            move = botMove()
             if move == 0:
                 print("Tie Game!!")
             else:

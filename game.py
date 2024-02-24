@@ -43,7 +43,7 @@ def playerMove():
             print("Please only enter the number!")
 
 
-def compMove():
+def botMove():
     possibleMoves = [x for x,letter in enumerate(board) if letter == ' ' and x!=0]
     move = 0
 
