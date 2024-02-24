@@ -4,7 +4,7 @@ import pygame
 import os
 
 # Import game functions
-from game import *
+from game_mechanics import *
 
 # Initialize pygame mixer
 pygame.mixer.init()

@@ -1,6 +1,6 @@
 # Main Game
 
-from game import *
+from game_mechanics import *
 
 def main():
     print("Welcome to the X versus O game!!")
