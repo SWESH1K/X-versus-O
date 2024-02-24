@@ -1,4 +1,5 @@
 # Mechanics of the Game
+import random
 
 board = [' ' for x in range(10)]
 
@@ -44,41 +45,33 @@ def playerMove():
 
 
 def botMove():
-    possibleMoves = [x for x,letter in enumerate(board) if letter == ' ' and x!=0]
+    possibleMoves = [x for x, letter in enumerate(board) if letter == ' ' and x != 0]
     move = 0
 
-    for letter in ['O','X']:
+    for letter in ['O', 'X']:
         for i in possibleMoves:
-            boardCopy = board[:] # Creates a copy
+            boardCopy = board[:]  # Creates a copy
             boardCopy[i] = letter
             if isWinner(boardCopy, letter):
                 move = i
                 return move
-            
-    cornersOpen = [i for i in possibleMoves if i in [1,3,7,9]]
+
+    cornersOpen = [i for i in possibleMoves if i in [1, 3, 7, 9]]
 
     if len(cornersOpen) > 0:
-        move = selectRandom(cornersOpen)
+        move = random.choice(cornersOpen)
         return move
 
     if 5 in possibleMoves:
         move = 5
         return move
-    
-    edgesOpen = [i for i in possibleMoves if i in [12,4,6,8]]
+
+    edgesOpen = [i for i in possibleMoves if i in [2, 4, 6, 8]]
 
     if len(edgesOpen) > 0:
-        move = selectRandom(edgesOpen)
-    
+        move = random.choice(edgesOpen)
+
     return move
-
-def selectRandom(list):
-    import random
-
-    length = len(list)
-    r = random.randint(0,length)
-    return list[r]
-
 
 def isBoardfull(board):
     if board.count(' ') > 1: return False
