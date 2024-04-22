@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import pygame
 import os
+from time import sleep
 
 # Import game functions
 from game_mechanics import *
